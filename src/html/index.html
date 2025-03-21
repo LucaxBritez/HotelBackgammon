@@ -1,0 +1,39 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header con íconos</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="/src/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+  <!-- Header -->
+  <header class="bg-black text-white p-2">
+    <div class="container mx-auto  flex justify-end items-center space-x-2">
+
+      <!-- Componente 1: Ícono de teléfono y texto -->
+      <div class="flex items-center space-x-2">
+        <i class="fas fa-phone-alt text-xl"></i>
+        <span>+1 234 567 890</span>
+      </div>
+
+      <!-- Componente 2: Ícono de ubicación y texto -->
+      <div class="flex items-center space-x-2">
+        <i class="fas fa-map-marker-alt text-xl"></i>
+        <span>Calle Ficticia 123, Ciudad</span>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="p-8">
+    <h2 class="text-xl font-semibold">Bienvenido a mi sitio web</h2>
+    <p>Este es un sitio web simple con un header usando Tailwind CSS y Font Awesome.</p>
+  </main>
+
+</body>
+</html>
