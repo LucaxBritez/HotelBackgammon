@@ -1,0 +1,73 @@
+@tailwind utilities;
+
+/* Header */
+.header {
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Barra de Navegación */
+.navbar {
+  background-color: #333;
+  position: relative;
+  padding: 10px;
+  transition: top 0.3s ease-in-out;
+}
+
+.navbar.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: top 0.3s ease-in-out;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Parallax */
+.parallax {
+  background-image: url('https://wallpapers.com/images/hd/hotel-room-1920-x-1080-picture-dyxueresgj1e4s3n.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 550px;
+  position: relative;
+}
+
+.parallax-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
