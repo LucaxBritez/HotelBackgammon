@@ -4,54 +4,90 @@
 .header {
   background-color: black;
   color: white;
-  padding: 10px;
+  padding: 5px;
 }
 
 .container {
   max-width: 1200px;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  /* Alinea todo a la izquierda */
   align-items: center;
 }
+
 
 .icon-group {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-right: 20px;/* Agrega espacio entre los elementos */
+  font-size: x-small;
 }
 
-/* Barra de Navegación */
+/* Navbar básico */
 .navbar {
-  background-color: #333;
+  background-color: transparent;
   position: relative;
   padding: 10px;
-  transition: top 0.3s ease-in-out;
+  transition: transform 0.5s ease, opacity 0.5s ease, background-color 0.5s ease;
+  /* Transición para transform, opacity y background-color */
+  opacity: 1;
+  /* Aseguramos que el navbar sea visible por defecto */
+  transform: scaleY(0.9);
+  /* El navbar empieza expandido */
+  transform-origin: top;
+  /* Asegura que el navbar se reduzca desde la parte superior */
 }
 
+/* Contenedor para los enlaces */
+.navbar .nav-wrapper {
+  transition: transform 1s ease;
+  /* Se asegura de que el contenedor de los enlaces no se vea afectado por el escalado */
+}
+
+/* Navbar sticky cuando se hace scroll */
 .navbar.sticky {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  transition: top 0.3s ease-in-out;
+  transform: scaleY(0.8);
+  /* El navbar se reduce un poco en tamaño vertical */
+  opacity: 1;
+  /* El navbar se mantiene visible */
+  background-color: white;
+  /* Cambia el color de fondo a blanco cuando el navbar es sticky */
+}
+
+.navbar a {
+  color: black;
+  /* Cambia el color de los enlaces a negro cuando es sticky */
 }
 
 .nav-links {
   display: flex;
   gap: 20px;
+  justify-content: flex-end;
+  font-size: small;
 }
 
 .nav-links a {
   color: white;
   padding: 14px 20px;
   text-decoration: none;
+  transition: color 0.3s ease;
+  /* Transición para el color de los enlaces */
 }
 
 .nav-links a:hover {
   background-color: #ddd;
   color: black;
 }
+
+
+
+
 
 /* Parallax */
 .parallax {
