@@ -21,3 +21,23 @@ window.addEventListener("scroll", function () {
     }
   }
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const featuresSection = document.querySelector(".features-container");
+
+  // Configuración del Intersection Observer
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          featuresSection.classList.add("visible"); // Agrega la clase cuando entra en pantalla
+        }
+      });
+    },
+    { threshold: 0.3 } // Se activará cuando el 30% de la sección sea visible
+  );
+
+  observer.observe(featuresSection);
+});

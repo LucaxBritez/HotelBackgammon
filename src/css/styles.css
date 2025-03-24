@@ -1,30 +1,31 @@
 @tailwind utilities;
 
-/* Header */
+/* ==================== HEADER ==================== */
 .header {
   background-color: black;
   color: white;
   padding: 5px;
 }
 
+/* Contenedor principal */
 .container {
   max-width: 1200px;
   margin: auto;
   display: flex;
-  justify-content: flex-start;
-  /* Alinea todo a la izquierda */
+  justify-content: flex-start; /* Alinea todo a la izquierda */
   align-items: center;
 }
 
-
+/* Grupo de iconos en el header */
 .icon-group {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-right: 20px;/* Agrega espacio entre los elementos */
+  margin-right: 20px; /* Agrega espacio entre los elementos */
   font-size: x-small;
 }
 
+/* ==================== NAVBAR ==================== */
 /* Navbar básico */
 .navbar {
   background-color: transparent;
@@ -32,18 +33,14 @@
   padding: 10px;
   transition: transform 0.5s ease, opacity 0.5s ease, background-color 0.5s ease;
   /* Transición para transform, opacity y background-color */
-  opacity: 1;
-  /* Aseguramos que el navbar sea visible por defecto */
-  transform: scaleY(0.9);
-  /* El navbar empieza expandido */
-  transform-origin: top;
-  /* Asegura que el navbar se reduzca desde la parte superior */
+  opacity: 1; /* Aseguramos que el navbar sea visible por defecto */
+  transform: scaleY(0.9); /* El navbar empieza expandido */
+  transform-origin: top; /* Asegura que el navbar se reduzca desde la parte superior */
 }
 
 /* Contenedor para los enlaces */
 .navbar .nav-wrapper {
-  transition: transform 1s ease;
-  /* Se asegura de que el contenedor de los enlaces no se vea afectado por el escalado */
+  transition: transform 1s ease; /* Se asegura de que el contenedor de los enlaces no se vea afectado por el escalado */
 }
 
 /* Navbar sticky cuando se hace scroll */
@@ -52,19 +49,17 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  transform: scaleY(0.8);
-  /* El navbar se reduce un poco en tamaño vertical */
-  opacity: 1;
-  /* El navbar se mantiene visible */
-  background-color: white;
-  /* Cambia el color de fondo a blanco cuando el navbar es sticky */
+  transform: scaleY(0.8); /* El navbar se reduce un poco en tamaño vertical */
+  opacity: 1; /* El navbar se mantiene visible */
+  background-color: white; /* Cambia el color de fondo a blanco cuando el navbar es sticky */
 }
 
+/* Estilos de los enlaces dentro del navbar */
 .navbar a {
-  color: black;
-  /* Cambia el color de los enlaces a negro cuando es sticky */
+  color: black; /* Cambia el color de los enlaces a negro cuando es sticky */
 }
 
+/* Contenedor de los enlaces */
 .nav-links {
   display: flex;
   gap: 20px;
@@ -72,33 +67,42 @@
   font-size: small;
 }
 
+/* Estilos de los enlaces */
 .nav-links a {
   color: white;
   padding: 14px 20px;
   text-decoration: none;
-  transition: color 0.3s ease;
-  /* Transición para el color de los enlaces */
+  transition: color 0.3s ease; /* Transición para el color de los enlaces */
 }
 
+/* Estilo hover para los enlaces */
 .nav-links a:hover {
   background-color: #ddd;
   color: black;
 }
 
-
-
-
-
-/* Parallax */
+/* ==================== PARALLAX ==================== */
 .parallax {
+  position: relative;
   background-image: url('https://wallpapers.com/images/hd/hotel-room-1920-x-1080-picture-dyxueresgj1e4s3n.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
   height: 550px;
-  position: relative;
 }
 
+/* Capa oscura encima de la imagen */
+.parallax::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Capa negra semitransparente */
+}
+
+/* Contenedor del contenido dentro del parallax */
 .parallax-content {
   position: absolute;
   top: 50%;
@@ -106,4 +110,52 @@
   transform: translate(-50%, -50%);
   text-align: center;
   width: 100%;
+  z-index: 10; /* Asegura que el texto quede por encima de la capa oscura */
+}
+
+/* Estilos del texto dentro del parallax */
+.parallax-content h2,
+.parallax-content p {
+  color: white; /* Asegura que el texto siga siendo visible */
+}
+
+/* ==================== SECCIÓN DE CARACTERÍSTICAS ==================== */
+/* Mantiene la distribución horizontal */
+.features-container {
+  display: flex; /* Organiza los elementos en fila */
+  justify-content: space-around; /* Espaciado uniforme */
+  align-items: center; /* Centrado vertical */
+  padding: 50px 0; /* Espaciado arriba y abajo */
+  
+
+  /* Animación */
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Se activa cuando entra en pantalla */
+.features-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cada caja de característica */
+.feature-box {
+  text-align: center; /* Centra contenido */
+  width: 18%; /* Cada sección ocupa un 18% del ancho total */
+  padding: 20px;
+}
+
+/* Icono dentro de cada característica */
+.feature-box i {
+  font-size: 50px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Texto dentro de cada característica */
+.feature-box p {
+  font-size: 18px;
+  color: #555;
 }
