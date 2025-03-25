@@ -142,9 +142,14 @@
 
 /* Cada caja de característica */
 .feature-box {
-  text-align: center; /* Centra contenido */
-  width: 18%; /* Cada sección ocupa un 18% del ancho total */
+  text-align: center;
+  width: 18%;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Mantiene el contenido alineado desde arriba */
+  align-items: center;
+  height: 180px; /* Ajusta la altura para que todas las cajas sean iguales */
 }
 
 /* Icono dentro de cada característica */
@@ -152,29 +157,46 @@
   font-size: 50px;
   color: #333;
   margin-bottom: 10px;
+  height: 60px; /* Fijamos una altura uniforme para todos los iconos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor del texto */
+.feature-box .text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Asegura que los textos comiencen desde el mismo punto */
+  align-items: center;
+  height: 80px; /* Se ajusta la altura para que todas las cajas tengan la misma distribución */
 }
 
 /* Texto dentro de cada característica */
 .feature-box p {
-  font-size: 18px;
-  color: #555;
+  min-height: 30px; /* Asegura que todas las líneas de texto tengan la misma altura mínima */
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+
 /* ==================== HABITACIONES ==================== */
-/* ==================== Fotos de las habitaciones ==================== */
+
 .gallery-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columnas */
   gap: 25px; /* Espacio entre imágenes */
   justify-items: center;
-  padding: 10px;
+  padding: 25px;
 }
 
 /* Contenedor de cada imagen */
 .gallery-item {
   position: relative; /* Necesario para posicionar el contenedor dentro */
   width: 100%; /* Ancho al 100% del contenedor */
-  height: 600px; /* Alto de la imagen */
+  height: 500px; /* Alto de la imagen */
 }
 
 /* Imagen */
@@ -265,4 +287,43 @@
   .overlay-text {
     font-size: 14px; /* Tamaño de texto más pequeño */
   }
+}
+/* ==================== Turnos ==================== */
+.text-banner {
+  width: 100%; /* Ocupa todo el ancho */
+  background-color: transparent; /* Fondo oscuro */
+  color: blacks; /* Texto en color blanco */
+  text-align: center; /* Centra el texto */
+  padding: 20px 0; /* Espaciado arriba y abajo */
+  font-size: 52px; /* Tamaño del texto */
+  font-weight: bold;
+}
+
+.three-columns {
+  display: flex; /* Organiza en fila horizontal */
+  justify-content: space-around; /* Distribuye uniformemente */
+  align-items: center; /* Centra verticalmente */
+  padding: 50px 0;
+  text-align: center;
+}
+
+.column {
+  width: 30%; /* Ajusta el ancho de cada columna */
+  padding: 20px;
+}
+
+.column i {
+  font-size: 50px; /* Tamaño del icono */
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.bold-text {
+  font-weight: bold; /* Texto en negrita */
+  font-size: 20px;
+}
+
+.column p {
+  font-size: 16px;
+  color: #555;
 }
