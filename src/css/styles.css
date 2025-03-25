@@ -159,3 +159,110 @@
   font-size: 18px;
   color: #555;
 }
+
+/* ==================== HABITACIONES ==================== */
+/* ==================== Fotos de las habitaciones ==================== */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 25px; /* Espacio entre imágenes */
+  justify-items: center;
+  padding: 10px;
+}
+
+/* Contenedor de cada imagen */
+.gallery-item {
+  position: relative; /* Necesario para posicionar el contenedor dentro */
+  width: 100%; /* Ancho al 100% del contenedor */
+  height: 600px; /* Alto de la imagen */
+}
+
+/* Imagen */
+.gallery-container img {
+  width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+  height: 100%; /* Ajusta la altura de la imagen al 100% del contenedor */
+  object-fit: cover; /* Ajusta la imagen para que no se deforme */
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Añadido el filtro a la transición */
+  filter: brightness(0.7); /* Reduce el brillo de la imagen */
+}
+
+/* Efecto de zoom al pasar el mouse */
+.gallery-container img:hover {
+  transform: scale(1.05);
+  filter: brightness(1); /* Restaura el brillo al pasar el mouse */
+}
+
+/* Contenedor interno dentro de la imagen */
+.image-overlay {
+  position: absolute;
+  top: 30%; /* Ajusta la posición vertical */
+  left: 0%; /* Ajusta la posición horizontal */
+  width: 100%; /* Ancho del contenedor interno */
+  height: 40%; /* Altura del contenedor interno */
+  background: transparent(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+  display: flex;
+  justify-content: flex-start; /* Alinea los elementos verticalmente desde el inicio */
+  align-items: flex-start; /* Alinea los elementos a la izquierda */
+  border-radius: 8px; /* Bordes redondeados */
+  flex-direction: column;
+  padding: 20px; /* Espaciado adicional, si es necesario */
+}
+
+/* Texto dentro del contenedor interno */
+.overlay-text {
+  color: white; /* Color del texto */
+  font-size: 32px; /* Tamaño de la fuente */
+  font-weight: bold;
+  text-align: left;
+  padding: 10px;
+  margin-bottom: -30px; /* Acerca los textos más que con un valor mayor */
+}
+
+.overlay-text-price {
+  color: white; /* Color del texto */
+  font-size: 52px; /* Tamaño de la fuente */
+  font-weight: bold;
+  text-align: left;
+  padding: 10px;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  }
+
+  .gallery-item {
+    height: 400px; /* Reduce la altura de las imágenes */
+  }
+
+  .image-overlay {
+    top: 20%; /* Ajuste de la posición en pantallas más pequeñas */
+    width: 60%;
+    height: 30%;
+  }
+
+  .overlay-text {
+    font-size: 16px; /* Tamaño de texto más pequeño */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .gallery-container {
+    grid-template-columns: 1fr; /* 1 columna */
+  }
+
+  .gallery-item {
+    height: 300px; /* Reduce aún más la altura de las imágenes */
+  }
+
+  .image-overlay {
+    top: 10%; /* Ajuste de la posición en pantallas pequeñas */
+    width: 70%;
+    height: 25%;
+  }
+
+  .overlay-text {
+    font-size: 14px; /* Tamaño de texto más pequeño */
+  }
+}
